@@ -14,7 +14,7 @@ Controle de estoque
 git clone https://github.com/pedrolaraburu/distribuidora-digital.git
 cd distribuidora-digital
 python3 -m venv .venv
-source .venv/bin/active
+source .venv/Scripts/activate
 pip install -r requirements.txt
 python contrib/env_gen.py
 python manage.py migrate

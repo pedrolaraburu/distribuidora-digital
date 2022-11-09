@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # my apps
+    
+    'projeto.core',
+    'projeto.produto',
 ]
 
 MIDDLEWARE = [
@@ -49,11 +53,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # my apps
-    'projeto_dd.core',
 ]
 
-ROOT_URLCONF = 'projeto_dd.urls'
+ROOT_URLCONF = 'projeto.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'projeto_dd.wsgi.application'
+WSGI_APPLICATION = 'projeto.wsgi.application'
 
 
 # Database

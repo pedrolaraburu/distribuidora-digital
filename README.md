@@ -19,3 +19,8 @@ pip install -r requirements.txt
 python contrib/env_gen.py
 python manage.py migrate
 ```
+
+
+### Links
+
+[bootstrap-starter-template] https://getbootstrap.com/docs/5.2/getting-started/introduction/

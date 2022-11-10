@@ -23,4 +23,4 @@ python manage.py migrate
 
 ### Links
 
-[bootstrap-starter-template] https://getbootstrap.com/docs/5.2/getting-started/introduction/
+[bootstrap-starter-template](https://getbootstrap.com/docs/5.2/getting-started/introduction/)

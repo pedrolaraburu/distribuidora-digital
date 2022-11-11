@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  body {
+    margin-top: 60px;
+  }
+</style>
 
 <div class="page-header">
-    <h2><i class="fa fa-user"></i>Lista de produtos</h2>
+    <h2>Lista de produtos
+      <span class="pull-right">
+        <a href="{% url 'produto:produto_add' %}">
+          <button type="button" class="btn btn-primary">
+            <span class="fa fa-plus"></span>Adicionar
+          </button>
+        </a>
+      </span>
+    </h2>
 
     {% if object_list %}
 

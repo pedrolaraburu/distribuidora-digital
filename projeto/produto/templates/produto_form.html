@@ -2,16 +2,20 @@
 
 {% load widget_tweaks %}
 
+{% block content %}
+
 {% block css %}
     <style>
         span.required::after {
             content: "*";
             color: red;
         }
+        body{
+            margin-top: 60px;
+        }
     </style>
 {% endblock css %}
 
-{% block content %}
 
     <form method="POST" novalidate>
         {% csrf_token %}

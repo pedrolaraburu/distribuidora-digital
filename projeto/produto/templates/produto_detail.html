@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% block css %}
+  <style>
+    body {
+      margin-top: 60px;
+    }
+  </style>
+{% endblock css %}
 <a href="{% url 'produto:produto_list' %}">Voltar</a>
 
     <h1>{{ object }}
         <span class="pull-right">
-            <a href="">
+            <a href="{% url 'produto:produto_edit' object.pk %}">
                 <button type="button" class="btn btn-success">
                     <span class="fa fa-pencil"></span> Editar
                 </button>

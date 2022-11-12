@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% block css %}
+  <style>
+    body {
+      margin-top: 60px;
+    }
+  </style>
+{% endblock css %}
+
+    <form method="POST" novalidate>{% csrf_token %}
+        <p>Tem certeza que quer deletar "{{ object }}"?</p>
+        <button type="submit" class="btn btn-success">Confirmar</button>
+        {{ form }}
+    </form>
+{% endblock content %}

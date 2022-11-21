@@ -14,6 +14,7 @@ class EstoqueAdmin(admin.ModelAdmin):
     list_display = (
         '__str__',
         'nf',
+        'funcionario',
     )
     search_fields = ('nf',)
     list_filter = ('funcionario',)

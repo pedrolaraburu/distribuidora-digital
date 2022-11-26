@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-
+from django.http import JsonResponse
 from .forms import ProdutoForm
 
 from .models import Produto
@@ -39,3 +39,8 @@ class ProdutoDelete(DeleteView):
     model = Produto
     template_name = 'produto_delete.html'
     success_url = reverse_lazy('produto:produto_list')
+
+def produto_json(request, pk):
+    produto = Produto.objects.filter(pk=pk)
+    data = [item.to_dict_json() for item in produto]
+    return JsonResponse({'data': data})

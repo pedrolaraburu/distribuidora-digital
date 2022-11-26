@@ -1,4 +1,5 @@
 from django.forms import inlineformset_factory
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, resolve_url
 from .models import EstoqueEntrada, EstoqueSaida, Estoque, EstoqueItens
@@ -25,6 +26,7 @@ def dar_baixa_estoque(form):
         produto.save()
     print('Estoque atualizado com sucesso!')
 
+@login_required
 def estoque_entrada_add(request):
     template_name = 'estoque_entrada_form.html'
     estoque_form=Estoque()
@@ -54,6 +56,8 @@ def estoque_entrada_add(request):
     context={'form': form, 'formset': formset}
     return render(request, template_name, context)
 
+
+@login_required
 def estoque_saida_add(request):
     template_name = 'estoque_saida_form.html'
     estoque_form=Estoque()

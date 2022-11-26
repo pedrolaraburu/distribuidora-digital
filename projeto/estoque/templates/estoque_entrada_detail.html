@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<a href="{% url: 'estoque:estoque_entrada_list' %}">Voltar</a>
+{% block css %}
+  <style>
+    body {
+      margin-top: 60px;
+    }
+  </style>
+{% endblock css %}
+<a href="{% url 'estoque:estoque_entrada_list' %}">Voltar</a>
 
 <h1>{{ object }}</h1>
 

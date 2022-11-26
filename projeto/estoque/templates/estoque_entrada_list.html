@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% block css %}
+  <style>
+    body {
+      margin-top: 60px;
+    }
+  </style>
+{% endblock css %}
 <h2>Lista de produtos
     <span class="pull-right">
-        <a href="#">
+        <a href="{% url 'estoque:estoque_entrada_add'%}">
             <button type="button" class="btn btn-primary">
                 <span class="fa fa-plus"></span>Adicionar
             </button>

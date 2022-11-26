@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -15,18 +16,7 @@
     <!-- Select2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     
-      <style>
-          body {
-            margin: 60px 0 0 0;
-            display: flex;
-          }
-          .ok {
-            color: green;
-          }
-          .no {
-            color: red;
-          }
-      </style>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block css %}{% endblock css %}
 
   </head>

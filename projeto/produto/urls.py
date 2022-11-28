@@ -10,4 +10,5 @@ urlpatterns = [
     path('<int:pk>/edit', v.ProdutoUpdate.as_view(), name='produto_edit'),
     path('<int:pk>/delete', v.ProdutoDelete.as_view(), name='produto_delete'),
     path('<int:pk>/json/', v.produto_json, name='produto_json'),
+    path('loja/', v.produto_loja, name='produto_loja'),
 ]

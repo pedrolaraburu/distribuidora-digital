@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block css%}
+<style>
+    body {
+        padding: 60px;
+    }
+</style>
+{% endblock css %}
+
+{% block content %}
+
+<div class="row g-3">
+    {% for object in object_list %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card mt-3 mb-3">
+            <img src="https://cdn.discordapp.com/attachments/696835489050787853/1046509866367324160/london.jpg"
+                class="card-img-top" alt="Card image cap">
+            <div class="card-header text-center">
+                <p class="card-text">Preço: R${{ object.preco }}</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ object.produto }}</h5>
+                {% if object.estoque > 0 %}
+                <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                {% else %}
+                <a href="#" class="btn btn-danger disabled" disabled>Reabastecendo estoque</a>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                {% if object.estoque > 0 %}
+                <small class="text-success">Em estoque: {{ object.estoque }} unidades</small>
+                {% else %}
+                <small class="text-danger">Produto esgotado</small>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+  
+{% endblock content %}
+  
+  

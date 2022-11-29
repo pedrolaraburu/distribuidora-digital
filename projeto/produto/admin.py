@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Produto
+from .models import Produto, Carrinho
 
 # Register your models here.
 
@@ -16,3 +16,12 @@ class ProdutoAdmin(admin.ModelAdmin):
     )
     search_fields=('produto',)
     list_filter=('importado',)
+
+
+@admin.register(Carrinho)
+class ProdutoCarrinho(admin.ModelAdmin):
+    list_display = (
+        '__str__',
+        'quantity',
+        'get_total_item_price'
+    )

@@ -5,11 +5,24 @@
     body {
         padding: 60px;
     }
+    .btn-circle.btn-sm {
+        width: 50px;
+        height: 50px;
+        padding: 6px 0px;
+        border-radius: 30px;
+        text-align: center;
+    }
 </style>
 {% endblock css %}
 
 {% block content %}
-
+<div class="pull-right">
+    <a href="{% url 'produto:produto_carrinho' %}">
+        <button class="btn btn-primary btn-circle btn-sm">
+            <span class="fa fa-shopping-cart"></span>
+        </button>
+    </a>
+</div>
 <div class="row g-3">
     {% for object in object_list %}
     <div class="col-12 col-md-6 col-lg-4">
@@ -17,12 +30,15 @@
             <img src="https://cdn.discordapp.com/attachments/696835489050787853/1046509866367324160/london.jpg"
                 class="card-img-top" alt="Card image cap">
             <div class="card-header text-center">
-                <p class="card-text">Preço: R${{ object.preco }}</p>
+                <!-- <p class="card-text">Preço: R${{ object.preco }}</p> -->
+                <a href="" class="btn btn-info rounded-3 disabled" disabled>Preço: R${{ object.preco }}</a>
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{ object.produto }}</h5>
                 {% if object.estoque > 0 %}
-                <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary">
+                    <span class="fa fa-shopping-cart"> Adicionar ao carrinho</span>
+                </a>
                 {% else %}
                 <a href="#" class="btn btn-danger disabled" disabled>Reabastecendo estoque</a>
                 {% endif %}
